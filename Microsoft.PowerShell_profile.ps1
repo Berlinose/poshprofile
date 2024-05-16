@@ -2,7 +2,7 @@
 # Import-Module oh-my-posh
 # Set-PoshPrompt -Theme half-life
 # Set-PoshPrompt -Theme zash
- oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/ys.omp.json" | Invoke-Expression
+# oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/ys.omp.json" | Invoke-Expression
 # CheckNetIsolation.exe loopbackexempt -a -p=8xx8rvfyw5nnt
 
 
@@ -116,6 +116,11 @@ function wgtu(){
 
 function sudo(){
     Start-Process -FilePath $args[0] -Verb RunAs
+}
+
+function adc(){
+    $host = "10.0.0." + $args[0] + ":5555"
+    adb connect $host
 }
 
 function ip(){
